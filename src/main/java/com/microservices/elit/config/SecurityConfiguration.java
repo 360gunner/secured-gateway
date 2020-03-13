@@ -1,7 +1,5 @@
-package com.techprimers.security.securitydbexample.config;
+package com.microservices.elit.config;
 
-import com.techprimers.security.securitydbexample.repository.UsersRepository;
-import com.techprimers.security.securitydbexample.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -11,6 +9,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.microservices.elit.repository.UsersRepository;
+import com.microservices.elit.service.CustomUserDetailsService;
 
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity

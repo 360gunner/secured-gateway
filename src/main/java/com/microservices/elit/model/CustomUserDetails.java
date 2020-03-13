@@ -1,4 +1,4 @@
-package com.techprimers.security.securitydbexample.model;
+package com.microservices.elit.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

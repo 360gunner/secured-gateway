@@ -1,13 +1,14 @@
-package com.techprimers.security.securitydbexample.service;
+package com.microservices.elit.service;
 
-import com.techprimers.security.securitydbexample.model.CustomUserDetails;
-import com.techprimers.security.securitydbexample.model.Users;
-import com.techprimers.security.securitydbexample.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import com.microservices.elit.model.CustomUserDetails;
+import com.microservices.elit.model.Users;
+import com.microservices.elit.repository.UsersRepository;
 
 import java.util.Optional;
 

@@ -1,7 +1,8 @@
-package com.techprimers.security.securitydbexample.repository;
+package com.microservices.elit.repository;
 
-import com.techprimers.security.securitydbexample.model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.microservices.elit.model.Users;
 
 import java.util.Optional;
 

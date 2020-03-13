@@ -1,4 +1,4 @@
-package com.techprimers.security.securitydbexample.model;
+package com.microservices.elit.model;
 
 import javax.persistence.*;
 import java.util.Set;
