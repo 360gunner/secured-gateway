@@ -12,7 +12,7 @@ public class HelloResource {
 
     @GetMapping("/all")
     public String hello() {
-        return "Hello Youtube";
+        return "Hello";
     }
 
     @PreAuthorize("hasAnyRole('ADMIN')")
