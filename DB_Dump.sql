@@ -1,27 +1,12 @@
-# ************************************************************
-# Sequel Pro SQL dump
-# Version 4541
-#
-# http://www.sequelpro.com/
-# https://github.com/sequelpro/sequelpro
-#
-# Host: 127.0.0.1 (MySQL 5.6.35)
-# Database: test
-# Generation Time: 2017-11-09 16:39:29 +0000
-# ************************************************************
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-
-# Dump of table role
-# ------------------------------------------------------------
+####################################
+####################################
+#not a big issue, but i noticed that 
+#in the added mysql file, there's a 
+#small mistake, the role_id is unique
+#and it shouldn't be, because it's a
+#one to many relation.. 
+####################################
+####################################
 
 DROP TABLE IF EXISTS `role`;
 
@@ -37,6 +22,9 @@ LOCK TABLES `role` WRITE;
 INSERT INTO `role` (`role_id`, `role`)
 VALUES
 	(1,'ADMIN');
+INSERT INTO `role` (`role_id`, `role`)
+VALUES
+	(2,'USER');
 
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -62,8 +50,11 @@ LOCK TABLES `user` WRITE;
 
 INSERT INTO `user` (`user_id`, `active`, `email`, `last_name`, `name`, `password`)
 VALUES
-	(1,1,'admin@gmail.com','s','Sam','sam'),
-	(2,1,'admin@gmail.com','s','youtube','youtube');
+	(1,1,'houssem@gmail.com','houssem','360gunner','1998'),
+	(2,1,'amira@gmail.com','amira','amira','bellili');
+
+
+
 
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -78,7 +69,6 @@ CREATE TABLE `user_role` (
   `user_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
   PRIMARY KEY (`user_id`,`role_id`),
-  UNIQUE KEY `UK_it77eq964jhfqtu54081ebtio` (`role_id`),
   CONSTRAINT `FK859n2jvi8ivhui0rl0esws6o` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
   CONSTRAINT `FKa68196081fvovjhkek5m97n3y` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -88,7 +78,8 @@ LOCK TABLES `user_role` WRITE;
 
 INSERT INTO `user_role` (`user_id`, `role_id`)
 VALUES
-	(1,1);
+	(1,1),
+    (2,2);
 
 /*!40000 ALTER TABLE `user_role` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -101,4 +92,3 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
